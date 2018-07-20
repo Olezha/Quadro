@@ -59,7 +59,8 @@ class ChipSet {
     }
 
     Chip get(Point point) {
-        return chips.get(point);
+        Chip chip = chips.get(point);
+        return chip != null ? chip : Chip.NULL;
     }
 
     Collection<Chip> chips() {

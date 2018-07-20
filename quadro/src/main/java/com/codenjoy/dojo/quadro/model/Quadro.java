@@ -142,8 +142,7 @@ public class Quadro implements Field {
         for (int length = 0; length < CHIPS_LENGTH_TO_WIN - 1; length++) {
             current = direction.change(current);
             Chip currentChip = chip(current);
-            if (currentChip != null
-                    && currentChip.itsMyColor(from.getColor())) {
+            if (currentChip.itsMyColor(from.getColor())) {
                 result++;
             }
             else break;
