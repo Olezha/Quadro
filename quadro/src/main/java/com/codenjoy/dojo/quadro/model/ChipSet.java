@@ -46,7 +46,7 @@ class ChipSet {
         chips.putAll(points.stream()
                 .map(element.equals(Elements.YELLOW) ? YellowChip::new
                         : element.equals(Elements.RED) ? RedChip::new
-                        : null)
+                        : i -> Chip.NULL)
                 .collect(toMap(i -> i, i -> i)));
     }
 
