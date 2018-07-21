@@ -115,8 +115,8 @@ public class Quadro implements Field {
             return;
         }
 
-            Chip chip = new Chip(color, x, y);
-            chips.put(chip, chip);
+        Chip chip = new Chip(color, x, y);
+        chips.put(chip, chip);
 
         chipMoved = true;
         checkWin(chip);
@@ -141,17 +141,12 @@ public class Quadro implements Field {
         Point current = from;
         for (int length = 0; length < CHIPS_LENGTH_TO_WIN - 1; length++) {
             current = direction.change(current);
-            Chip currentChip = chip(current);
+            Chip currentChip = chips.get(current);
             if (currentChip.itsMyColor(from.getColor())) {
                 result++;
-            }
-            else break;
+            } else break;
         }
         return result;
-    }
-
-    private Chip chip(Point pt) {
-        return chips.get(pt);
     }
 
     private void draw() {
